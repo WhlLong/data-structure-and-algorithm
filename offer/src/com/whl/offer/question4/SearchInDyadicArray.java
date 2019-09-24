@@ -22,10 +22,14 @@ public class SearchInDyadicArray {
         System.out.println(SearchInDyadicArray.search1(arr, 15) ? "15存在！" : "15不存在！");
         System.out.println(SearchInDyadicArray.search1(arr, 0) ? "0存在！" : "0不存在！");
         System.out.println(SearchInDyadicArray.search1(arr, 3) ? "3存在！" : "3不存在！");
+
+
+        int arr2[][] = {};
+        System.out.println(SearchInDyadicArray.search1(arr2,16));
     }
 
     public static boolean search1(int[][] array, int target) {
-        if(array == null){
+        if(array == null || array.length == 0){
             return false;
         }
 
@@ -46,6 +50,7 @@ public class SearchInDyadicArray {
             }
             if (target < array[colIndex][rowIndex]){
                 colIndex--;
+                continue;
             }
 
             return true;
