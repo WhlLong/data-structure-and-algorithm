@@ -14,14 +14,20 @@ package com.whl.offer.question12;
  * 通过数组或者字符串来表示最大值
  * <p>
  * 思路二:使用全排列的思路来打印1到最大n位数
+ * <p>
+ * <p>
+ * java中char类型在计算时会被转换成int数值，这个转换是根据ASCII码表来进行转换的，
+ * 比如字符‘0’转换成int类型以后的值是48
+ * int类型的值如果强转成char类型，也是按照ASCII码表来进行转换，比如‘0’会被转换成空字符
  */
 public class PrintNumOneToN {
 
     public static void main(String[] args) {
+//        print1(2);
 
-        print1(2);
         System.out.println("===========");
-        printFrom1ToMaxOfNDigit(2);
+
+        print2(2);
     }
 
 
@@ -38,28 +44,28 @@ public class PrintNumOneToN {
         }
     }
 
-    public static void printFrom1ToMaxOfNDigit(int n) {
+    public static void print2(int n) {
         if (n <= 0) {
             return;
         }
 
         StringBuilder sb = new StringBuilder();
-        // 初始化字符串，比如n = 3就初始化为"000"
+        // 初始化字符串,全部初始化为0，比如n==3时初始化为"000",n==4时初始化为"0000"
         for (int i = 0; i < n; i++) {
             sb.append("0");
         }
 
         while (stillIncrease(sb, n)) {
-            print(sb);
+            print2Print(sb);
         }
 
         System.out.println();
     }
 
     private static boolean stillIncrease(StringBuilder sb, int len) {
-        // 进位,应该要给下一位相加，所以设置在循环外
+        // 进位
         int toTen = 0;
-        // 从个位开始加，如果有进位就看十位...如果到最高位还有进位，说明溢出；
+        // 从个位开始加，如果有进位就看十位,如果到最高位还有进位，说明太长溢出了
         for (int i = len - 1; i >= 0; i--) {
             // 加上进位toTen
             int sum = sb.charAt(i) - '0' + toTen;
@@ -72,8 +78,8 @@ public class PrintNumOneToN {
                 // 进位溢出
                 if (i == 0) {
                     return false;
-                    // 需要进位，当前位设为0
                 } else {
+                    // 需要进位，当前位设为0
                     sb.setCharAt(i, '0');
                     // 进位了
                     toTen = 1;
@@ -87,7 +93,7 @@ public class PrintNumOneToN {
         return true;
     }
 
-    private static void print(StringBuilder sb) {
+    private static void print2Print(StringBuilder sb) {
         int start = sb.length();
         // 找到第一个不为0的索引
         for (int i = 0; i < sb.length(); i++) {
@@ -102,5 +108,7 @@ public class PrintNumOneToN {
         }
     }
 
+    public static void print3() {
+    }
 
 }
