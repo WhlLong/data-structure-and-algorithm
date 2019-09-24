@@ -1,4 +1,4 @@
-package com.whl.offer.question5;
+package com.whl.offer.question6;
 
 
 public class SingleNode {

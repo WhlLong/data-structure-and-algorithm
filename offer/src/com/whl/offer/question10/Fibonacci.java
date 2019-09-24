@@ -1,4 +1,4 @@
-package com.whl.offer.question9;
+package com.whl.offer.question10;
 
 /**
  * 写一个函数，输入n，求斐波那契数列的第n项。

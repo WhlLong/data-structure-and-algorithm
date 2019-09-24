@@ -1,4 +1,4 @@
-package com.whl.offer.question10;
+package com.whl.offer.question15;
 
 /**
  * 二进制中1的个数

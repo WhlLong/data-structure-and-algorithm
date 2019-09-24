@@ -1,4 +1,4 @@
-package com.whl.offer.question8;
+package com.whl.offer.question11;
 
 /**
  * 旋转数组的最小数字

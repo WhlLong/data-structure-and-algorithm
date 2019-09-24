@@ -1,4 +1,6 @@
-package com.whl.offer.question6;
+package com.whl.offer.question7;
+
+import com.whl.offer.question7.TreeNode;
 
 /**
  * 根据前序遍历结果和中序遍历结果重建二叉树

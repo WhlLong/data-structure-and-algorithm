@@ -1,4 +1,6 @@
-package com.whl.offer.question12;
+package com.whl.offer.question17;
+
+import java.util.Arrays;
 
 /**
  * 打印1到最大的n位数
@@ -15,6 +17,7 @@ package com.whl.offer.question12;
  * <p>
  * 思路二:使用全排列的思路来打印1到最大n位数
  * <p>
+ * 打印的时候也需要注意，前面的0就不需要打印出来了
  * <p>
  * java中char类型在计算时会被转换成int数值，这个转换是根据ASCII码表来进行转换的，
  * 比如字符‘0’转换成int类型以后的值是48
@@ -27,7 +30,8 @@ public class PrintNumOneToN {
 
         System.out.println("===========");
 
-        print2(2);
+//        print2(2);
+        printToMax2(2);
     }
 
 
@@ -44,6 +48,11 @@ public class PrintNumOneToN {
         }
     }
 
+    /**
+     * 使用字符串来处理，解决大数问题
+     *
+     * @param n
+     */
     public static void print2(int n) {
         if (n <= 0) {
             return;
@@ -108,7 +117,50 @@ public class PrintNumOneToN {
         }
     }
 
-    public static void print3() {
+
+    /**
+     * 全排列
+     */
+
+    /**字符每一位进行全排列
+     *
+     * @param n
+     */
+    public static void printToMax2(int n){
+        if(n <= 0) {
+            return;
+        }
+        char[] number = new char[n];
+        Arrays.fill(number, '0');
+        printOrder(number,n,0);
     }
+    public static void printOrder(char[] number, int n, int loc){
+        if(loc == n) {
+            return;
+        }
+        for(int i = 0; i <= 9; i++){
+            number[loc] = (char)('0' + i);
+            if(loc == n - 1){
+                printNumber(number);
+            }
+            printOrder(number,n,loc + 1);
+        }
+    }
+
+    public static void printNumber(char[] num){
+        int size = num.length;
+        int i = 0;
+        while(i < size && num[i] == '0') {
+            i++;
+        }
+
+        if(i == size) {
+            //全是0不打印
+            return;
+        }
+        char[] printNum = Arrays.copyOfRange(num, i, size);//复制数组
+        System.out.println(printNum);
+    }
+
 
 }

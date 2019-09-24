@@ -1,4 +1,4 @@
-package com.whl.offer.question6;
+package com.whl.offer.question7;
 
 public class TreeNode {
     int val;
