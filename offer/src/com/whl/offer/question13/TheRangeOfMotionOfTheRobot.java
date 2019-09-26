@@ -12,8 +12,39 @@ public class TheRangeOfMotionOfTheRobot {
 
     public int movingCount(int threshold, int rows, int cols) {
 
+        if (threshold <= 0 || rows <= 0 || cols <= 0) {
+            return 0;
+        }
 
-        return 0;
+        //标志位
+        boolean[][] visited = new boolean[rows][cols];
+
+        countCore(threshold, rows, cols, 0, 0, visited);
+
+        int count = 0;
+        for(int i=0;i<visited.length;i++){
+            for(int j=0;j<visited[0].length;j++){
+                if(visited[i][j]){
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    private void countCore(int threshold, int rows, int cols, int rowIndex, int colIndex, boolean[][] visited) {
+        if (rowIndex < 0 || colIndex < 0 || rowIndex >= rows || colIndex >= cols
+                || visited[rowIndex][colIndex] || indexSum(rowIndex, colIndex) > threshold) {
+            return ;
+        }
+
+        visited[rowIndex][colIndex] = true;
+
+        countCore(threshold,rows,cols,rowIndex+1,colIndex,visited);
+        countCore(threshold,rows,cols,rowIndex-1,colIndex,visited);
+        countCore(threshold,rows,cols,rowIndex,colIndex+1,visited);
+        countCore(threshold,rows,cols,rowIndex,colIndex-1,visited);
     }
 
 
