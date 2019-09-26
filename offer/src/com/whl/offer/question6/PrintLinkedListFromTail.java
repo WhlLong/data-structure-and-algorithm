@@ -136,7 +136,7 @@ public class PrintLinkedListFromTail {
 
 
     /**
-     * 翻转链表
+     * 翻转链表,yuandi
      *
      * @param node
      */
