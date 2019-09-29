@@ -13,12 +13,12 @@ package com.whl.offer.question18;
  */
 public class DeleteNodeInLinkedList {
 
-    public void DeleteNode(Node head, Node toBeDeleted) {
+    public void DeleteNode(ListNode head, ListNode toBeDeleted) {
         if (head == null || toBeDeleted == null) {
             return;
         }
 
-        Node next = toBeDeleted.next;
+        ListNode next = toBeDeleted.next;
         /**
          * 如果链表中只有一个节点
          */
