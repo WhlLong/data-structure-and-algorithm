@@ -13,8 +13,7 @@ import java.util.Arrays;
  * 创建一个新的char数组，数组的长度=原本字符串的长度+2*空格的数量，
  * 然后对原本的字符串进行遍历，然后将新值加入到新的数组中。
  * 思路三:
- * 创建一个新的char数组，数组的长度=原本字符串的长度+2*空格的数量，
- * 然后对新数组进行倒叙遍历，将替换后的值从后往前添加到新数组中去
+ * 先对字符串的char[]进行扩容，然后倒序遍历字符串，将新值倒序加入到char[]中
  */
 public class ReplaceBlank {
 
@@ -27,6 +26,11 @@ public class ReplaceBlank {
         System.out.println(ReplaceBlank.replace4(val2));
     }
 
+    /**
+     * 思路一
+     * @param val
+     * @return
+     */
     public static String replace1(String val) {
         if (val == null || "".equals(val)) {
             return "";
@@ -43,6 +47,11 @@ public class ReplaceBlank {
         return stringBuffer.toString();
     }
 
+    /**
+     * 思路一
+     * @param val
+     * @return
+     */
     public static String replace2(String val) {
         if (val == null || "".equals(val)) {
             return "";
@@ -59,6 +68,11 @@ public class ReplaceBlank {
         return stringBuffer.toString();
     }
 
+    /**
+     * 思路二
+     * @param val
+     * @return
+     */
     public static String replace3(String val) {
         if (val == null || "".equals(val)) {
             return "";
@@ -95,6 +109,11 @@ public class ReplaceBlank {
         return new String(newArray);
     }
 
+    /**
+     * 思路三
+     * @param val
+     * @return
+     */
     public static String replace4(String val) {
         if (val == null || "".equals(val)) {
             return "";

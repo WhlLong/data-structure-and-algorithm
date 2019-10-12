@@ -11,12 +11,18 @@ package com.whl.offer.question18;
  * <p>
  * <p>
  * <p>
- * 情况一:  头结点和第二个节点重复
- * 情况二:  尾结点和倒数第二个节点重复
+ *  情况一: 出现重复节点，保留一个
+ *  情况二: 出现重复节点，一个不留，全部删除
+ *
  */
 public class DeleteDuplicationNode {
 
-    public ListNode deleteDuplication(ListNode pHead) {
+    /**
+     * 情况一： 出现重复节点时，保留其中一个重复节点
+     * @param pHead
+     * @return
+     */
+    public ListNode deleteDuplication1(ListNode pHead) {
 
         if (pHead == null) {
             return null;
@@ -32,46 +38,11 @@ public class DeleteDuplicationNode {
          * 2.如果该链表中有多个节点。
          * 将链表的节点与它的后一个节点比较，如果相同就删除当前节点
          */
-        ListNode head = null;
-        ListNode pre = null;
-        boolean hasHead = false;
-        boolean hasSame = false;
-        while (pHead.next != null) {
-            if (pHead.val == pHead.next.val) {
-                //删除当前节点
-                pHead.val = pHead.next.val;
-                pHead.next = pHead.next.next;
-                hasSame = true;
-            } else {
-                if (hasSame) {
-                    //删除当前节点
-                    pHead.val = pHead.next.val;
-                    pHead.next = pHead.next.next;
-                    hasSame = false;
-                } else {
-                    if (!hasHead) {
-                        head = pHead;
-                        hasHead = true;
-                    }
-                    pre = pHead;
-                    pHead = pHead.next;
-                }
-            }
-        }
-
-        if (!hasSame && head == null) {
-            head = pHead;
-        }
-        if (hasSame && pre != null) {
-            pre.next = null;
-        }
-        if (hasSame && pre == null) {
-            head = null;
-        }
 
 
-        return head;
+        return null;
     }
+
 
 
     public static void main(String[] args) {
@@ -93,7 +64,7 @@ public class DeleteDuplicationNode {
         listNode0.next = listNode1;
 
 
-        deleteDuplicationNode.deleteDuplication(listNode0);
+        deleteDuplicationNode.deleteDuplication1(listNode0);
 
 
     }
