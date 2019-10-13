@@ -13,20 +13,55 @@ package com.whl.offer.question18;
  */
 public class DeleteNodeInLinkedList {
 
+
+    public static void main(String[] args) {
+        ListNode listNode1 = new ListNode(1);
+        ListNode listNode2 = new ListNode(2);
+        ListNode listNode3 = new ListNode(3);
+        ListNode listNode4 = new ListNode(4);
+
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+
+
+        DeleteNodeInLinkedList nodeInLinkedList = new DeleteNodeInLinkedList();
+        nodeInLinkedList.DeleteNode(listNode1, listNode4);
+        System.out.println(listNode1);
+
+
+        nodeInLinkedList.DeleteNode(listNode1, listNode2);
+        System.out.println(listNode1);
+    }
+
+
     public void DeleteNode(ListNode head, ListNode toBeDeleted) {
         if (head == null || toBeDeleted == null) {
             return;
         }
 
-        ListNode next = toBeDeleted.next;
-        /**
-         * 如果链表中只有一个节点
-         */
-        if (head == toBeDeleted && next == null) {
-            head = null;
-            toBeDeleted = null;
-        }else{
+        //只有一个节点
+        if (head == toBeDeleted && toBeDeleted.next == null) {
+            //java中的非基本类型传参，都是引用传递，所以当只有一个节点是，是无法处理这个问题的，
+            // 除非该方法有返回值，返回新的头结点
+            return;
+        }
 
+        //不止一个节点,当前节点是尾节点
+        if (head != toBeDeleted && toBeDeleted.next == null) {
+            while (head.next != null) {
+                if (head.next == toBeDeleted) {
+                    head.next = null;
+                    return;
+                }
+                head = head.next;
+            }
+        }
+
+        //不止一个节点，当前节点不是尾节点
+        if (head != toBeDeleted && toBeDeleted.next != null) {
+            toBeDeleted.val = toBeDeleted.next.val;
+            toBeDeleted.next = toBeDeleted.next.next;
         }
     }
 

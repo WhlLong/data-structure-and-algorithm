@@ -1,7 +1,5 @@
 package com.whl.offer.question6;
 
-import com.whl.offer.question6.SingleNode;
-
 import java.util.ArrayList;
 import java.util.Stack;
 
