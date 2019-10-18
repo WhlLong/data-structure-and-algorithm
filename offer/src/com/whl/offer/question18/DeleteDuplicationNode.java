@@ -60,7 +60,6 @@ public class DeleteDuplicationNode {
         ListNode head = new ListNode(Integer.MIN_VALUE);
         head.next = pHead;
         ListNode pre = head;
-        boolean isDup = false;
         while (pHead != null) {
             if (pHead.next != null && pHead.val == pHead.next.val) {
                 while (pHead.next != null && pHead.val == pHead.next.val) {
