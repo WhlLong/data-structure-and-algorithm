@@ -1,5 +1,7 @@
 package com.whl.offer.question18;
 
+import com.whl.offer.ListNode;
+
 /**
  * 删除链表中的重复节点
  * 题目：

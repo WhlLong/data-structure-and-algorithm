@@ -1,4 +1,4 @@
-package com.whl.offer.question18;
+package com.whl.offer;
 
 public class ListNode {
     public int val;
