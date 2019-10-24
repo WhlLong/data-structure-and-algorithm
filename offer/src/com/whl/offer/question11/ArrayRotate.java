@@ -26,26 +26,26 @@ public class ArrayRotate {
 
     public static void main(String[] args) {
         int[] arr1 = {3, 4, 5, 6, 0, 1, 2};
-        System.out.println(getMin(arr1));
+        System.out.println(minNumberInRotateArray(arr1));
 
         System.out.println("============");
 
         int[] arr2 = {1, 0, 1, 1, 1};
-        System.out.println(getMin(arr2));
+        System.out.println(minNumberInRotateArray(arr2));
 
         System.out.println("============");
 
         int[] arr3 = {2, 2, 3, 4, 5, 6, 6};
-        System.out.println(getMin(arr3));
+        System.out.println(minNumberInRotateArray(arr3));
 
         System.out.println("============");
 
         int[] arr4 = {6,4};
-        System.out.println(getMin(arr4));
+        System.out.println(minNumberInRotateArray(arr4));
     }
 
 
-    private static int getMin(int[] arr) {
+    private static int minNumberInRotateArray(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
         }

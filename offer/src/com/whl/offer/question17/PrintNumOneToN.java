@@ -31,7 +31,7 @@ public class PrintNumOneToN {
         System.out.println("===========");
 
 //        print2(2);
-        printToMax2(2);
+        print3(2);
     }
 
 
@@ -126,7 +126,7 @@ public class PrintNumOneToN {
      *
      * @param n
      */
-    public static void printToMax2(int n){
+    public static void print3(int n){
         if(n <= 0) {
             return;
         }

@@ -1,0 +1,49 @@
+package com.whl.offer.question26;
+
+import com.whl.offer.TreeNode;
+
+/**
+ * 树的子结构
+ * 输入两棵二叉树A和B，判断B是不是A的子结构。
+ * <p>
+ * 遍历root1，找到等于root2的根节点的节点，然后在判断该节点的左右子树是否与root2的左右子树一致
+ *
+ */
+public class SubstructureOfBinaryTree {
+
+    public boolean HasSubtree(TreeNode root1, TreeNode root2) {
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        boolean result = false;
+        if (root1.val == root2.val) {
+            result = check(root1, root2);
+        }
+        if (!result) {
+            result = check(root1.left, root2);
+        }
+        if (!result) {
+            result = check(root1.right, root2);
+        }
+
+        return result;
+    }
+
+    private boolean check(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 != null) {
+            return false;
+        }
+        if (root2 == null) {
+            return true;
+        }
+        if (root1.val != root2.val) {
+            return false;
+        }
+
+        boolean left = check(root1.left, root2.left);
+        boolean right = check(root1.right, root2.right);
+
+        return left && right;
+    }
+
+}
