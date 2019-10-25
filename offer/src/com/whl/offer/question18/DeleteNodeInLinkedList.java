@@ -27,7 +27,7 @@ public class DeleteNodeInLinkedList {
         listNode3.next = listNode4;
 
 
-        
+
         DeleteNodeInLinkedList nodeInLinkedList = new DeleteNodeInLinkedList();
         nodeInLinkedList.DeleteNode(listNode1, listNode4);
         System.out.println(listNode1);
