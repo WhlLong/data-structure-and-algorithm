@@ -9,7 +9,7 @@ package com.whl.offer.question8;
 public class BinaryTreeNextNode {
 
     public static void main(String[] args) {
-        
+
     }
 
     public TreeNode solution(TreeNode node) {
