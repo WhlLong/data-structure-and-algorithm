@@ -15,8 +15,6 @@ public class BinaryTreeNextNode {
 
     }
 
-
-
     public TreeLinkNode GetNext(TreeLinkNode pNode)
     {
         TreeLinkNode node;
