@@ -1,5 +1,7 @@
 package com.whl.offer.question18;
 
+import com.whl.offer.ListNode;
+
 /**
  * 删除链表中的节点
  * 题目一：
@@ -23,6 +25,7 @@ public class DeleteNodeInLinkedList {
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
+
 
 
         DeleteNodeInLinkedList nodeInLinkedList = new DeleteNodeInLinkedList();
